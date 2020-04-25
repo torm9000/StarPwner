@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Item : NSObject{
+class Item : NSObject, NSCoding{
     var name : String
     var size : Int
     var mass : Int
@@ -25,24 +25,22 @@ class Item : NSObject{
     
     
     convenience init(random:Bool = false){
-        if random{
-            let starList = ["Betelgeuse","Sirius","Canopus"]
-            
-            var idx = arc4random_uniform(UInt32(starList.count))
-            
-            let randomStar = starList[Int(idx)]
-            let randomSize =  Int(arc4random_uniform(100000))
-            let randomMass = Int(arc4random_uniform(200000))
-            
-            self.init(name:randomStar,
-                size:randomSize,
-                mass: randomMass
-                
-            )
-            
-        }
-        else{
-            self.init(name:"",size:200,mass:300)
-        }
+        self.init(name:"Enter Star Name",size:1,mass:1)
+        
+    }
+    
+    func encode(with aCoder: NSCoder) {
+     aCoder.encode(name, forKey: "name")
+     aCoder.encode(dateCreated, forKey: "dateCreated")
+     aCoder.encode(mass,forKey: "mass")
+     aCoder.encode(size, forKey: "size")
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+     name = aDecoder.decodeObject(forKey: "name") as! String
+     dateCreated = aDecoder.decodeObject(forKey: "dateCreated") as! Date
+     mass = aDecoder.decodeInteger(forKey: "mass")
+     size = aDecoder.decodeInteger(forKey: "size")
+     super.init()
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sja-Ax-fZc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qDM-DI-xzJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Items View Controller-->
+        <!--StarPwner-->
         <scene sceneID="TUf-Hm-mVG">
             <objects>
                 <tableViewController id="sja-Ax-fZc" customClass="ItemsViewController" customModule="StarPwner" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,37 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="0c8-ok-UWh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eq-Wm-VkG">
-                                    <rect key="frame" x="376" y="15" width="30" height="30"/>
-                                    <state key="normal" title="Edit"/>
-                                    <connections>
-                                        <action selector="toggleEditingMode:" destination="sja-Ax-fZc" eventType="touchUpInside" id="nss-SR-zpl"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2h-mF-DEq">
-                                    <rect key="frame" x="8" y="15" width="30" height="30"/>
-                                    <state key="normal" title="Add"/>
-                                    <connections>
-                                        <action selector="addNewItem:" destination="sja-Ax-fZc" eventType="touchUpInside" id="GdS-q9-RQm"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstItem="U2h-mF-DEq" firstAttribute="centerY" secondItem="0c8-ok-UWh" secondAttribute="centerY" id="7wL-vF-s9A"/>
-                                <constraint firstItem="7Eq-Wm-VkG" firstAttribute="leading" secondItem="U2h-mF-DEq" secondAttribute="trailing" constant="8" id="LKr-CA-caN"/>
-                                <constraint firstItem="U2h-mF-DEq" firstAttribute="leading" secondItem="0c8-ok-UWh" secondAttribute="leading" constant="8" id="Sin-tw-68w"/>
-                                <constraint firstItem="7Eq-Wm-VkG" firstAttribute="centerY" secondItem="0c8-ok-UWh" secondAttribute="centerY" id="irv-cX-3h5"/>
-                                <constraint firstAttribute="trailing" secondItem="7Eq-Wm-VkG" secondAttribute="trailing" constant="8" id="vLm-X7-0VP"/>
-                            </constraints>
-                        </view>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="uGw-Xn-B0Y" customClass="ItemCell" customModule="StarPwner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uGw-Xn-B0Y" id="jok-FF-rHj">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
@@ -80,11 +53,12 @@
                                         <constraint firstItem="Feo-Vw-3Ow" firstAttribute="top" secondItem="jok-FF-rHj" secondAttribute="topMargin" id="pz0-pe-1bN"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.76647943021606224" green="0.22968538460332563" blue="0.70786932110900291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="massLabel" destination="T2S-UE-hRm" id="TWE-oG-q5g"/>
                                     <outlet property="nameLabel" destination="Feo-Vw-3Ow" id="ZKN-6v-Frh"/>
                                     <outlet property="sizeLabel" destination="Q5l-ae-R8V" id="fXE-QQ-buf"/>
-                                    <segue destination="kru-oe-QLC" kind="show" id="urI-y4-xIy"/>
+                                    <segue destination="kru-oe-QLC" kind="show" identifier="showItem" id="urI-y4-xIy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,21 +67,28 @@
                             <outlet property="delegate" destination="sja-Ax-fZc" id="4D1-tN-gXO"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="StarPwner" id="fdA-gf-XpV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="E9x-cp-E9L">
+                            <connections>
+                                <action selector="addNewItem:" destination="sja-Ax-fZc" id="SKj-7t-A0z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZ7-eu-e0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.927536231884062" y="-560.49107142857144"/>
+            <point key="canvasLocation" x="955.07246376811599" y="-560.49107142857144"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="gZb-X8-b5A">
             <objects>
                 <viewController id="kru-oe-QLC" customClass="DetailViewController" customModule="StarPwner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cb4-vY-HR4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zRv-cS-8kt">
-                                <rect key="frame" x="8" y="1" width="398" height="806"/>
+                                <rect key="frame" x="8" y="89" width="398" height="772"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aa5-Vb-g4z">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
@@ -122,6 +103,9 @@
                                                 <rect key="frame" x="53" y="0.0" width="345" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="kru-oe-QLC" id="A5E-Tx-JSE"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -138,6 +122,9 @@
                                                 <rect key="frame" x="48.5" y="0.0" width="349.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="kru-oe-QLC" id="1jF-8t-6M4"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -154,23 +141,29 @@
                                                 <rect key="frame" x="40.5" y="0.0" width="357.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="kru-oe-QLC" id="IEl-SI-LvK"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A26-Lw-bwZ">
-                                        <rect key="frame" x="0.0" y="126" width="398" height="680"/>
+                                        <rect key="frame" x="0.0" y="126" width="398" height="646"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Keb-vS-f31" firstAttribute="leading" secondItem="ub6-aP-v1B" secondAttribute="leading" id="kKc-Ru-UUb"/>
                                     <constraint firstItem="FGv-8j-9iZ" firstAttribute="leading" secondItem="MBr-54-FuS" secondAttribute="leading" id="ohB-IM-b3g"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vaj-po-Jb9" firstAttribute="bottom" secondItem="zRv-cS-8kt" secondAttribute="bottom" constant="1" id="5C3-P2-rBe"/>
                             <constraint firstItem="zRv-cS-8kt" firstAttribute="top" secondItem="vaj-po-Jb9" secondAttribute="top" constant="1" id="bH1-Ei-PzV"/>
@@ -183,13 +176,36 @@
                     <connections>
                         <outlet property="dateLabel" destination="A26-Lw-bwZ" id="pYt-7G-Uzt"/>
                         <outlet property="massField" destination="OKT-I2-QYa" id="4fF-xk-Xc6"/>
-                        <outlet property="nameField" destination="AnR-aZ-ztO" id="jYX-Rb-7FB"/>
+                        <outlet property="nameField" destination="AnR-aZ-ztO" id="nzx-6R-4w1"/>
                         <outlet property="sizeField" destination="otw-Sq-IcP" id="KEA-nV-dbw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1P-Dm-PCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F7R-ti-Yra">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="kru-oe-QLC" id="4FE-zE-8xG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="750.72463768115949" y="-563.16964285714278"/>
+            <point key="canvasLocation" x="1660.8695652173915" y="-563.16964285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="peI-JP-ZFO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qDM-DI-xzJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wbc-RP-6sx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sja-Ax-fZc" kind="relationship" relationship="rootViewController" id="fYW-ac-TVX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OzG-hE-nO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="-560.49107142857144"/>
         </scene>
     </scenes>
 </document>

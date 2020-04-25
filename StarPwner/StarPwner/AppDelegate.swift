@@ -13,15 +13,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     var window: UIWindow?
+    let itemStore = ItemStore()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Create an ItemStore
-        let itemStore = ItemStore()
+        
         // Access the ItemsViewController and set its item store
-        let itemsController = window!.rootViewController as! ItemsViewController
+        let navController = window!.rootViewController as! UINavigationController
+        let itemsController = navController.topViewController as! ItemsViewController
         itemsController.itemStore = itemStore
         return true
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+     let success = itemStore.saveChanges()
+     if (success) {
+    print("Saved all of the Items")
+     } else {
+    print("Could not save any of the Items")
+     }
     }
 
     // MARK: UISceneSession Lifecycle
